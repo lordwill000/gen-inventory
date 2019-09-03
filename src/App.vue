@@ -1,7 +1,11 @@
 <template>
-  <div id="app">
-   <router-link to="/">Home</router-link> |
-      <router-link to="/employees">employees</router-link>
+  <div id="app" class="app">
     <router-view/>
   </div>
 </template>
+
+<style lang="scss" scoped>
+.app {
+  height: 100%;
+}
+</style>
