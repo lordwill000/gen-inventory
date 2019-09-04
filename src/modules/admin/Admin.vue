@@ -1,13 +1,9 @@
 <template>
-  <p>employees</p>
+  <p>Admin</p>
 </template>
 
 <script>
 export default {
-  name: 'Employees',
+  name: 'Admin',
 };
 </script>
-
-<style>
-
-</style>
