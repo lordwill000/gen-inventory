@@ -1,4 +1,4 @@
-import { Home } from '@/views';
+import Home from '@/views';
 import authRoutes from './auth/routes';
 import adminRoutes from './admin/routes';
 

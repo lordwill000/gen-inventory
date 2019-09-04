@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import Form from './components/Form.vue';
+import Form from './elements/Form.vue';
 
 export default {
   name: 'Auth',
@@ -24,7 +24,7 @@ export default {
   methods: {
     onAuthSubmit() {
       console.log('Form submitted');
-      this.$router.push({ name: 'overview' });
+      this.$router.push({ name: 'admin' });
     },
   },
 };
