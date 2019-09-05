@@ -22,7 +22,7 @@
 
 <script>
 import adminRoutes from '../routes';
-import { helpers } from '@/mixins/mixins.js';
+import { helpers } from '@/mixins';
 
 export default {
   name: 'Sidebar',

@@ -31,7 +31,7 @@
 
 <script>
 import { mixin as clickaway } from 'vue-clickaway';
-import { helpers } from '@/mixins/mixins.js';
+import { helpers } from '@/mixins';
 
 export default {
   name: 'Header',
