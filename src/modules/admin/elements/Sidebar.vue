@@ -6,17 +6,26 @@
         alt="md_logo"
       >
     </router-link>
-    <ul>
-      <li
-        v-for="route in routes[0].children"
-        :key="route.name"
+    <div class="menu__wrapper">
+      <ul>
+        <li
+          v-for="route in routes[0].children"
+          ref="links"
+          :key="route.name"
+        >
+          <router-link
+            :to="route"
+          >
+            {{ replaceString(route.name, '-', ' ') }}
+          </router-link>
+        </li>
+      </ul>
+      <img
+        ref="indicator"
+        class="indicator"
+        src="~@/assets/images/indicator.svg"
       >
-        <router-link :to="route">
-          {{ replaceString(route.name, '-', ' ') }}
-          <img :src="indicator">
-        </router-link>
-      </li>
-    </ul>
+    </div>
   </div>
 </template>
 
@@ -29,9 +38,28 @@ export default {
   mixins: [helpers],
   data: () => ({
     mdLogo: require('@/assets/images/md-logo-light.svg'),
-    indicator: require('@/assets/images/indicator.svg'),
     routes: adminRoutes,
   }),
+  watch: {
+    $route() {
+      this.onRouteChange();
+    },
+  },
+  mounted() {
+    this.onRouteChange();
+  },
+  methods: {
+    onRouteChange() {
+      this.$nextTick(() => {
+        const { links, indicator } = this.$refs;
+        const activeLink = links.filter(link => link.children[0].classList.contains('router-link-active'));
+
+        indicator.style.top = `${activeLink[0].offsetTop - 15}px`;
+
+        console.log(activeLink[0].getBoundingClientRect().top);
+      });
+    },
+  },
 };
 </script>
 
@@ -45,48 +73,43 @@ export default {
   position: fixed;
   top: 0;
   width: 260px;
-  img {
+  img:not(.indicator) {
     display: block;
     margin: 0 auto;
   }
-  ul {
-    list-style-type: none;
-    margin-bottom: 0;
-    margin-top: 120px;
-    padding-left: 0;
-    li {
-      padding-left: 50px;
-      padding-right: 50px;
-      position: relative;
-      img {
-        display: block;
-        height: 60px;
-        left: -15px;
-        position: absolute;
-        top: -18px;
-        transition: all 0.2s ease-in-out;
-        width: 15px;
-      }
-      a {
-        color: $gray1;
-        display: block;
-        font-family: 'RedHatMed';
-        @include font-size(18);
-        text-transform: capitalize;
-        transition: all 0.2s ease;
-        &.router-link-active,
-        &:hover {
-          color: #fff;
-          font-family: 'RedHatBold';
-          text-decoration: none;
-          img {
-            left: 0;
+  .menu__wrapper {
+    position: relative;
+    ul {
+      list-style-type: none;
+      margin-bottom: 0;
+      margin-top: 120px;
+      padding-left: 0;
+      li {
+        padding-left: 50px;
+        padding-right: 50px;
+        position: relative;
+        a {
+          color: $gray1;
+          display: block;
+          font-family: 'RedHatMed';
+          @include font-size(18);
+          text-transform: capitalize;
+          transition: all 0.2s ease;
+          &.router-link-active,
+          &:hover {
+            color: #fff;
+            font-family: 'RedHatBold';
+            text-decoration: none;
           }
         }
+        &:not(:last-of-type) {
+          padding-bottom: 40px;
+        }
       }
-      &:not(:last-of-type) {
-        padding-bottom: 40px;
-      }
+    }
+    .indicator {
+      position: absolute;
+      transition: all 0.2s ease-in-out;
     }
   }
 }
