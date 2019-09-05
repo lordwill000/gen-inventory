@@ -1,7 +1,7 @@
 <template>
   <button :type="type">
-    {{label}}
-    <slot/>
+    {{ label }}
+    <slot />
   </button>
 </template>
 
