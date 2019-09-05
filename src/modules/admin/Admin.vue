@@ -1,11 +1,11 @@
 <template>
   <div id="Admin">
-    <Header/>
+    <Header />
     <aside>
-      <Sidebar/>
+      <Sidebar />
     </aside>
     <main>
-      <router-view/>
+      <router-view />
     </main>
   </div>
 </template>
@@ -28,6 +28,9 @@ export default {
 
 main {
   margin-left: 260px;
+  margin-top: 60px;
+  padding-left: 60px;
+  padding-right: 60px;
 }
 
 </style>

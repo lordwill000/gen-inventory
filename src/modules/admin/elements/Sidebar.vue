@@ -1,13 +1,19 @@
 <template>
   <div class="sidebar">
     <router-link to="/admin">
-      <img :src="mdLogo" alt="md_logo">
+      <img
+        :src="mdLogo"
+        alt="md_logo"
+      >
     </router-link>
     <ul>
-      <li v-for="route in routes[0].children" :key="route.name">
+      <li
+        v-for="route in routes[0].children"
+        :key="route.name"
+      >
         <router-link :to="route">
-          {{replaceString(route.name, '-', ' ')}}
-          <img :src="indicator"/>
+          {{ replaceString(route.name, '-', ' ') }}
+          <img :src="indicator">
         </router-link>
       </li>
     </ul>

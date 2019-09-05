@@ -2,12 +2,25 @@
   <header>
     <h1>{{ heading }}</h1>
     <div class="user">
-      <div class="user__wrapper">
-        <img class="user__avatar" src="~@/assets/images/avatar-1.png" alt="avatar">
+      <div
+        v-on-clickaway="onClickAway"
+        class="user__wrapper"
+        :class="{'is-dropped': isDropped}"
+        @click="isDropped = !isDropped"
+      >
+        <img
+          class="user__avatar"
+          src="~@/assets/images/avatar-1.png"
+          alt="avatar"
+        >
         <div class="user__info">
           <h3>
             {{ user.name }}
-            <img class="ic_dropdown" src="~@/assets/images/ic_dropdown.svg" alt="dropdown_icon">
+            <img
+              class="ic_dropdown"
+              src="~@/assets/images/ic_dropdown.svg"
+              alt="dropdown_icon"
+            >
           </h3>
           <p>{{ user.role }}</p>
         </div>
@@ -17,17 +30,19 @@
 </template>
 
 <script>
+import { mixin as clickaway } from 'vue-clickaway';
 import { helpers } from '@/mixins/mixins.js';
 
 export default {
   name: 'Header',
-  mixins: [helpers],
+  mixins: [helpers, clickaway],
   data: () => ({
     heading: '',
     user: {
       name: 'Carl Angelo Agliam',
       role: 'Administrator',
     },
+    isDropped: false,
   }),
   watch: {
     $route() {
@@ -38,6 +53,9 @@ export default {
     this.onRouteChange();
   },
   methods: {
+    onClickAway() {
+      this.isDropped = false;
+    },
     onRouteChange() {
       this.heading = this.$route.name === 'overview' ? 'Welcome to Merch District' : this.toTitleCase(this.replaceString(this.$route.name, '-', ' '));
     },
@@ -77,9 +95,15 @@ header {
         width: 100%;
         z-index: -1;
       }
-      &:hover {
+      &:hover,
+      &.is-dropped {
         &:before {
           transform: scale(1.07, 1.3);
+        }
+      }
+      &.is-dropped {
+        .ic_dropdown {
+          transform: rotate(180deg);
         }
       }
     }
