@@ -16,20 +16,16 @@
 
 <script>
 import adminRoutes from '../routes';
-import mix from '@/mixins/mixins.vue';
+import { helpers } from '@/mixins/mixins.js';
 
 export default {
   name: 'Sidebar',
-  mixins: [mix],
+  mixins: [helpers],
   data: () => ({
     mdLogo: require('@/assets/images/md-logo-light.svg'),
     indicator: require('@/assets/images/indicator.svg'),
     routes: adminRoutes,
   }),
-  mounted() {
-    console.log(adminRoutes[0].children);
-    // console.log(mix.methods.capitalize('tete'));
-  },
 };
 </script>
 

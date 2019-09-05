@@ -1,5 +1,6 @@
 <template>
   <div id="Admin">
+    <Header/>
     <aside>
       <Sidebar/>
     </aside>
@@ -11,11 +12,13 @@
 
 
 <script>
+import Header from './elements/Header.vue';
 import Sidebar from './elements/Sidebar.vue';
 
 export default {
   name: 'Admin',
   components: {
+    Header,
     Sidebar,
   },
 };
