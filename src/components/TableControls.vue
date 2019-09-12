@@ -20,12 +20,7 @@ export default {
   },
   mounted() {
   },
-  methods: {
-    handleTabClick(val) {
-      console.log(val);
-      this.$emit('tab-clicked', val);
-    },
-  },
+  methods: {},
 };
 </script>
 

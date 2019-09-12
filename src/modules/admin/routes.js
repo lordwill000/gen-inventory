@@ -15,8 +15,8 @@ export default [
         component: Overview,
       },
       {
-        path: 'employee',
-        name: 'employee',
+        path: 'employees',
+        name: 'employees',
         component: Employees,
       },
       {

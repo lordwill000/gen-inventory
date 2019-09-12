@@ -31,7 +31,6 @@ export default {
   }),
   methods: {
     onAuthSubmit() {
-      console.log('Form submitted');
       this.$router.push({ name: 'admin' });
     },
   },

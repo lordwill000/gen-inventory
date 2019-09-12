@@ -2,8 +2,8 @@
   <div
     role="tab"
     class="tab"
-    :class="{'active': data.id === 0}"
-    @click="handleTabClick(data.val)"
+    :class="{'active': activeTab.tab.id === data.id}"
+    @click="handleTabClick(data)"
   >
     {{ data.label }}
     <span
@@ -14,6 +14,14 @@
 </template>
 
 <script>
+import { createNamespacedHelpers } from 'vuex';
+import types from '@/store/modules/admin/types';
+
+const {
+  mapGetters: mapAdminGetters,
+  mapActions: mapAdminActions,
+} = createNamespacedHelpers('admin');
+
 export default {
   name: 'Tab',
   props: {
@@ -22,11 +30,20 @@ export default {
       default: () => {},
     },
   },
-  mounted() {
+  computed: {
+    ...mapAdminGetters({
+      activeTab: 'getActiveTab',
+    }),
   },
   methods: {
-    handleTabClick(val) {
-      this.$emit('clicked', val);
+    ...mapAdminActions({
+      setActiveTab: types.SET_ACTIVE_TAB,
+    }),
+    handleTabClick(tab) {
+      this.setActiveTab({
+        module: this.$route.name,
+        tab,
+      });
     },
   },
 };
@@ -39,18 +56,24 @@ export default {
   font-family: 'RedHatMed';
   @include font-size(20);
   padding-right: 40px;
+  transition: color 0.2s ease;
   .suffix {
-    background-color: $accentPale;
+    background-color: $tertiary;
     border-radius: 5px;
-    color: $accent;
+    color: $gray1;
     height: 28px;
     font-family: 'RedHatMed';
     margin-left: 15px;
     min-width: 28px;
     padding: 5px;
+    transition: all 0.2s ease;
   }
   &.active {
     color: $primary;
+    .suffix {
+      background-color: $accentPale;
+      color: $accent;
+    }
   }
 }
 </style>

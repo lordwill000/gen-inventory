@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-// import createPersistedState from "vuex-persistedstate";
 import modules from './modules';
 
 const debug = process.env.NODE_ENV !== 'production';

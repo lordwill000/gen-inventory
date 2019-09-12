@@ -3,18 +3,26 @@
     <Tab
       v-for="(tab, i) in tabs"
       :key="tab.id"
-      ref="tab"
+      :ref="`tab--${tab.val}`"
       :data="tab"
       class="tab"
       :class="{'--last': i == tabs.length - 1}"
-      @clicked="onTabClick"
     />
-    <div class="indicator" />
+    <div
+      ref="indicator"
+      class="indicator"
+    />
   </div>
 </template>
 
 <script>
+import { createNamespacedHelpers } from 'vuex';
+import { setTimeout } from 'timers';
 import Tab from './Tab.vue';
+
+const {
+  mapGetters: mapAdminGetters,
+} = createNamespacedHelpers('admin');
 
 export default {
   name: 'TabsWrapper',
@@ -27,12 +35,21 @@ export default {
       default: () => [],
     },
   },
-  mounted() {
+  computed: {
+    ...mapAdminGetters({
+      activeTab: 'getActiveTab',
+    }),
   },
-  methods: {
-    onTabClick(val) {
-      console.log(val);
+  watch: {
+    activeTab(tab) {
+      this.$refs.indicator.style.left = `${this.$refs[`tab--${tab.tab.val}`][0].$el.offsetLeft}px`;
     },
+  },
+  mounted() {
+    this.$refs.indicator.style.left = `${this.$refs[`tab--${this.activeTab.tab.val}`][0].$el.offsetLeft}px`;
+    setTimeout(() => {
+      this.$refs.indicator.style.display = 'block';
+    }, 10);
   },
 };
 </script>
@@ -51,9 +68,11 @@ export default {
   .indicator {
     background-color: $accent;
     bottom: 0;
+    display: none;
     left: 0;
     height: 3px;
     position: absolute;
+    transition: left 0.2s ease-in-out;
     width: 60px;
   }
 }
