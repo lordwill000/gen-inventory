@@ -1,9 +1,17 @@
 <template>
-  <div class="auth" :style="{backgroundImage: `url(${authBg})`}">
+  <div
+    class="auth"
+    :style="{backgroundImage: `url(${authBg})`}"
+  >
     <div class="auth__content">
-      <img :src="mdLogo" alt="">
+      <img
+        :src="mdLogo"
+        alt=""
+      >
       <Form @submitted="onAuthSubmit" />
-      <p class="text-center auth__footer">{{poweredBy}}</p>
+      <p class="text-center auth__footer">
+        {{ poweredBy }}
+      </p>
     </div>
   </div>
 </template>

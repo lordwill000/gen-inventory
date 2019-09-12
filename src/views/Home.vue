@@ -1,7 +1,7 @@
 <template>
   <div>
-    <Auth/>
-    <router-view></router-view>
+    <Auth />
+    <router-view />
   </div>
 </template>
 
