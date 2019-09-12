@@ -55,8 +55,6 @@ export default {
         const activeLink = links.filter(link => link.children[0].classList.contains('router-link-active'));
 
         indicator.style.top = `${activeLink[0].offsetTop - 15}px`;
-
-        console.log(activeLink[0].getBoundingClientRect().top);
       });
     },
   },

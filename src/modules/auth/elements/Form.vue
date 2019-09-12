@@ -1,20 +1,35 @@
 <template>
   <div class="form__wrapper">
-    <h3 class="form__title">{{formTitle}}</h3>
-    <p class="form__subtitle">{{formSubtitle}}</p>
+    <h3 class="form__title">
+      {{ formTitle }}
+    </h3>
+    <p class="form__subtitle">
+      {{ formSubtitle }}
+    </p>
     <form @submit.prevent="$emit('submitted')">
       <div class="form__group">
         <label class="form__label">Username</label>
-        <input type="text" placeholder="Type your username" class="form__control">
+        <input
+          type="text"
+          placeholder="Type your username"
+          class="form__control"
+        >
       </div>
       <div class="form__group">
         <label class="form__label">Password</label>
-        <input type="password" :placeholder="passwordPlaceholder" class="form__control">
+        <input
+          type="password"
+          :placeholder="passwordPlaceholder"
+          class="form__control"
+        >
       </div>
       <div class="form__flex">
         <div class="form__group">
           <label class="chbx-label">
-            <input type="checkbox" name="rememberMe">
+            <input
+              type="checkbox"
+              name="rememberMe"
+            >
             Remember Me
           </label>
         </div>
@@ -22,13 +37,16 @@
           <a href="#">Forgot password?</a>
         </div>
       </div>
-      <Button label="Sign in" type="submit" />
+      <Button
+        label="Sign in"
+        type="submit"
+      />
     </form>
   </div>
 </template>
 
 <script>
-import Button from '@/components/button/Button.vue';
+import Button from '@/components/Button.vue';
 
 export default {
   name: 'Form',
