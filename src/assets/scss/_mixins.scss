@@ -1,3 +1,7 @@
 @mixin font-size($sizeValue) {
   font-size: ($sizeValue / 16) + rem;
 }
+
+@mixin toRem($property, $value) {
+  #{$property}: ($value / 16) + rem;
+}
