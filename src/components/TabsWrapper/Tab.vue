@@ -1,5 +1,5 @@
 <template>
-  <div
+  <h3
     role="tab"
     class="tab"
     :class="{'active': activeTab.tab.id === data.id}"
@@ -10,7 +10,7 @@
       v-if="data.suffix"
       class="suffix"
     >{{ data.suffix }}</span>
-  </div>
+  </h3>
 </template>
 
 <script>
@@ -53,8 +53,6 @@ export default {
 .tab {
   cursor: pointer;
   color: $gray1;
-  font-family: 'RedHatMed';
-  @include font-size(20);
   padding-right: 40px;
   transition: color 0.2s ease;
   .suffix {

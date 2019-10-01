@@ -98,7 +98,7 @@ export default {
           color: $gray1;
           display: block;
           font-family: 'RedHatMed';
-          @include font-size(18);
+          @include font-size(20);
           text-transform: capitalize;
           transition: all 0.2s ease;
           &.router-link-active,
