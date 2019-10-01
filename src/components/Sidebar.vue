@@ -9,14 +9,14 @@
     <div class="menu__wrapper">
       <ul>
         <li
-          v-for="route in routes[0].children"
+          v-for="navItem in navItems[0].children"
           ref="links"
-          :key="route.name"
+          :key="navItem.name"
         >
           <router-link
-            :to="route"
+            :to="navItem"
           >
-            {{ replaceString(route.name, '-', ' ') }}
+            {{ replaceString(navItem.name, '-', ' ') }}
           </router-link>
         </li>
       </ul>
@@ -30,20 +30,28 @@
 </template>
 
 <script>
-import adminRoutes from '@/modules/admin/routes';
 import { helpers } from '@/mixins';
 
 export default {
   name: 'Sidebar',
   mixins: [helpers],
+  props: {
+    routes: {
+      type: Array,
+      default: () => [],
+    },
+  },
   data: () => ({
     mdLogo: require('@/assets/images/md-logo-light.svg'),
-    routes: adminRoutes,
+    navItems: [],
   }),
   watch: {
     $route() {
       this.onRouteChange();
     },
+  },
+  beforeMount() {
+    this.navItems = this.routes;
   },
   mounted() {
     this.onRouteChange();

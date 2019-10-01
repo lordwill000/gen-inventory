@@ -2,7 +2,7 @@
   <div id="Admin">
     <Header />
     <aside>
-      <Sidebar />
+      <Sidebar :routes="routes" />
     </aside>
     <main>
       <router-view />
@@ -12,8 +12,9 @@
 
 
 <script>
-import Header from './elements/Header.vue';
-import Sidebar from './elements/Sidebar.vue';
+import Header from '@/components/Header.vue';
+import Sidebar from '@/components/Sidebar.vue';
+import adminRoutes from './routes';
 
 export default {
   name: 'Admin',
@@ -21,6 +22,9 @@ export default {
     Header,
     Sidebar,
   },
+  data: () => ({
+    routes: adminRoutes,
+  }),
 };
 </script>
 
