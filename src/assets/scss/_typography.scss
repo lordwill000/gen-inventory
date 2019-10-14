@@ -14,10 +14,16 @@
 }
 
 :root {
-  @media(min-width: 1440px) {
-    font-size: 100%;
-  }
-  font-size: 88%;
+  // @media(min-width: 1440px) {
+  //   font-size: 100%;
+  // }
+  // @media(min-width: 1199px) {
+  //   font-size: 95%;
+  // }
+  // @media(min-width: 991px) {
+  //   font-size: 90%;
+  // }
+  font-size: 100%;
   body {
     color: $primary;
     font-size: 1rem;
@@ -45,7 +51,7 @@ h2 {
 
 h3 {
   font-family: 'RedHatMed';
-  @include font-size(20);
+  @include font-size(18);
 }
 
 h4 {

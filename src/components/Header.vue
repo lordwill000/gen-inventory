@@ -66,7 +66,7 @@ export default {
 <style lang="scss" scoped>
 header {
   display: flex;
-  margin-left: 260px;
+  margin-left: 240px;
   padding: 85px 60px 0;
   h1 {
     font-family: 'RedHatBold';

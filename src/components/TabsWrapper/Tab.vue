@@ -55,6 +55,7 @@ export default {
   color: $gray1;
   padding-right: 40px;
   transition: color 0.2s ease;
+  white-space: nowrap;
   .suffix {
     background-color: $tertiary;
     border-radius: 5px;

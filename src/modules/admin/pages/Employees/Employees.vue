@@ -2,6 +2,7 @@
   <div id="Employees">
     <TableControls
       :tabs="tableTabs"
+      :controls="tableControls"
     />
   </div>
 </template>
@@ -10,6 +11,7 @@
 import { createNamespacedHelpers } from 'vuex';
 import types from '@/store/modules/admin/types';
 import TableControls from '@/components/TableControls.vue';
+import { tableTabs, tableControls } from './variables';
 
 const {
   mapGetters: mapAdminGetters,
@@ -22,19 +24,8 @@ export default {
     TableControls,
   },
   data: () => ({
-    tableTabs: [
-      {
-        id: 0,
-        label: 'Employee Management',
-        val: 'employee_management',
-        suffix: 40,
-      },
-      {
-        id: 1,
-        label: 'Role and Permissions',
-        val: 'role_and_permissions',
-      },
-    ],
+    tableTabs,
+    tableControls,
   }),
   computed: {
     ...mapAdminGetters({

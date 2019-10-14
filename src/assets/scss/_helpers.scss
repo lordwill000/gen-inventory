@@ -9,3 +9,19 @@
 .t-3 {
   @include font-size(10);
 }
+
+.c-accent {
+  color: $accent;
+}
+
+.fw-b {
+  font-family: 'RedHatBold;';
+}
+
+.fw-m {
+  font-family: 'RedHatMed';
+}
+
+.fw-r {
+  font-family: 'RedHatRegular';
+}

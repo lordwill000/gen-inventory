@@ -57,6 +57,7 @@ export default {
 <style lang="scss">
 .tabs__wrapper {
   display: flex;
+  overflow: auto;
   padding-bottom: 15px;
   padding-top: 15px;
   position: relative;

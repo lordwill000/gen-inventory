@@ -1,5 +1,9 @@
 <template>
-  <button :type="type">
+  <button
+    :type="type"
+    tabindex="0"
+    :class="`btn--${mode}`"
+  >
     {{ label }}
     <slot />
   </button>
@@ -17,25 +21,40 @@ export default {
       type: String,
       default: 'button',
     },
+    mode: {
+      type: String,
+      default: 'background',
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
 button {
-  background-color: $accent;
   border: none;
   border-radius: 5px;
   display: block;
-  color: #fff;
+  @include font-size(12);
   font-family: 'RedHatMed';
-  outline: none;
   padding: 15px;
   text-align: center;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
   width: 100%;
-  &:hover {
-    background-color: $accentEvent;
+  &.btn {
+    &--background {
+      background-color: $accent;
+      color: #fff;
+      &:hover {
+        background-color: $accentEvent;
+      }
+    }
+    &--transparent {
+      background-color: transparent;
+      color: $accent;
+    }
+  }
+  img {
+    margin-right: 12px;
   }
 }
 
