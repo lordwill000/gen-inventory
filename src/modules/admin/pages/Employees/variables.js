@@ -48,3 +48,67 @@ export const tableTabs = [
     val: 'role_and_permissions',
   },
 ];
+
+export const employeeMngmntTableHeader = [
+  {
+    id: 0,
+    label: 'ID',
+    hide: true,
+  },
+  {
+    id: 1,
+    label: 'Name',
+  },
+  {
+    id: 2,
+    label: 'Position',
+  },
+  {
+    id: 3,
+    label: 'Branch',
+  },
+  {
+    id: 4,
+    label: 'Date of Employment',
+  },
+  {
+    id: 5,
+    label: 'Employment Status',
+  },
+];
+
+export const rolesTableHeader = [
+  {
+    id: 0,
+    label: 'ID',
+    hide: true,
+  },
+  {
+    id: 1,
+    label: 'Role',
+  },
+  {
+    id: 2,
+    label: 'Employee',
+  },
+  {
+    id: 3,
+    label: 'Racks',
+  },
+  {
+    id: 4,
+    label: 'Store Partners',
+  },
+  {
+    id: 5,
+    label: 'Branches',
+  },
+  {
+    id: 6,
+    label: 'Utilities',
+  },
+  {
+    id: 7,
+    label: 'Reports',
+  },
+];

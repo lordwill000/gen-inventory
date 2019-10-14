@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header ref="header">
     <h1>{{ heading }}</h1>
     <div class="user">
       <div
@@ -30,8 +30,14 @@
 </template>
 
 <script>
+import { createNamespacedHelpers } from 'vuex';
 import { mixin as clickaway } from 'vue-clickaway';
+import types from '@/store/modules/admin/types';
 import { helpers } from '@/mixins';
+
+const {
+  mapActions: mapAdminActions,
+} = createNamespacedHelpers('admin');
 
 export default {
   name: 'Header',
@@ -51,8 +57,12 @@ export default {
   },
   mounted() {
     this.onRouteChange();
+    this.setHeaderHeight(this.$refs.header.clientHeight);
   },
   methods: {
+    ...mapAdminActions({
+      setHeaderHeight: types.GET_HEADER_HEIGHT,
+    }),
     onClickAway() {
       this.isDropped = false;
     },

@@ -12,6 +12,7 @@ const state = {
       suffix: 40,
     },
   },
+  headerHeight: 0,
 };
 
 export default {

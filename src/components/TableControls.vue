@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import TabsWrapper from './TabsWrapper/TabsWrapper.vue';
+import TabsWrapper from './Tabs/TabsWrapper.vue';
 import Button from './Button.vue';
 
 export default {
