@@ -1,8 +1,9 @@
 <template>
   <button
     :type="type"
-    tabindex="0"
+    tabIndex="0"
     :class="`btn--${mode}`"
+    @click="handleBtnClick"
   >
     {{ label }}
     <slot />
@@ -24,6 +25,11 @@ export default {
     mode: {
       type: String,
       default: 'background',
+    },
+  },
+  methods: {
+    handleBtnClick() {
+      this.$emit('clicked');
     },
   },
 };

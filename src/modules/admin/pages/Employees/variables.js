@@ -16,7 +16,7 @@ export const tableControls = [
   {
     id: 2,
     label: 'Filters',
-    event: 'bulk_select',
+    event: 'filter',
     mode: 'transparent',
     img: 'ic_dropdown_accent.svg',
     imgPosition: 'right',

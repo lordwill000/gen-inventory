@@ -10,7 +10,7 @@
         label=""
         class="w-auto d-inline"
         :mode="control.mode"
-        @click="onTableControlClick(control.event)"
+        @clicked="onTableControlClick(control.event)"
       >
         <img
           v-if="control.img"
@@ -45,7 +45,11 @@ export default {
   },
   mounted() {
   },
-  methods: {},
+  methods: {
+    onTableControlClick: (event) => {
+      console.log(event);
+    },
+  },
 };
 </script>
 
