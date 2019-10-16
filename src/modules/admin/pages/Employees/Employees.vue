@@ -18,7 +18,8 @@
 
 <script>
 import { createNamespacedHelpers } from 'vuex';
-import types from '@/store/modules/app/types';
+import { types as appTypes } from '@/store/modules/app/actions';
+import { types as employeesTypes } from '@/store/modules/employees/actions';
 import TableControls from '@/components/TableControls.vue';
 import Table from '@/components/Table/Table.vue';
 import MainContent from '@/components/MainContent.vue';
@@ -28,8 +29,13 @@ import {
 
 const {
   mapGetters: mapAppGetters,
-  mapActions: mapAdminActions,
+  mapActions: mapAppActions,
 } = createNamespacedHelpers('app');
+
+const {
+  mapGetters: mapEmployeGetters,
+  mapActions: mapEmployeActions,
+} = createNamespacedHelpers('employees');
 
 export default {
   name: 'Employees',
@@ -49,18 +55,23 @@ export default {
     ...mapAppGetters({
       activeTab: 'getActiveTab',
       headerHeight: 'getHeaderHeight',
-      // employees: 'getEmployees',
+    }),
+    ...mapEmployeGetters({
+      employees: 'data',
     }),
   },
   mounted() {
     this.$nextTick(() => {
       this.mainOffsetTop = this.headerHeight + this.$refs.tableHeader.$el.clientHeight;
     });
+    this.fetchEmployees();
   },
   methods: {
-    ...mapAdminActions({
-      setActiveTab: types.SET_ACTIVE_TAB,
-      // fetchEmployees: types.FETCH_EMPLOYEES,
+    ...mapAppActions({
+      setActiveTab: appTypes.SET_ACTIVE_TAB,
+    }),
+    ...mapEmployeActions({
+      fetchEmployees: employeesTypes.REQUEST,
     }),
     onTabClick(val) {
       console.log(val);

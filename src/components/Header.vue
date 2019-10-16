@@ -32,11 +32,11 @@
 <script>
 import { createNamespacedHelpers } from 'vuex';
 import { mixin as clickaway } from 'vue-clickaway';
-import types from '@/store/modules/app/types';
+import { types } from '@/store/modules/app/actions';
 import { helpers } from '@/mixins';
 
 const {
-  mapActions: mapAdminActions,
+  mapActions: mapAppActions,
 } = createNamespacedHelpers('app');
 
 export default {
@@ -60,7 +60,7 @@ export default {
     this.setHeaderHeight(this.$refs.header.clientHeight);
   },
   methods: {
-    ...mapAdminActions({
+    ...mapAppActions({
       setHeaderHeight: types.GET_HEADER_HEIGHT,
     }),
     onClickAway() {

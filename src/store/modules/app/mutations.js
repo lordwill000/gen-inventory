@@ -1,4 +1,4 @@
-import types from './types';
+import { types } from './actions';
 
 export default {
   [types.SET_ACTIVE_TAB]: ((state, payload) => {

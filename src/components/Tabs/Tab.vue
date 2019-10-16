@@ -15,11 +15,11 @@
 
 <script>
 import { createNamespacedHelpers } from 'vuex';
-import types from '@/store/modules/app/types';
+import { types } from '@/store/modules/app/actions';
 
 const {
   mapGetters: mapAppGetters,
-  mapActions: mapAdminActions,
+  mapActions: mapAppActions,
 } = createNamespacedHelpers('app');
 
 export default {
@@ -36,7 +36,7 @@ export default {
     }),
   },
   methods: {
-    ...mapAdminActions({
+    ...mapAppActions({
       setActiveTab: types.SET_ACTIVE_TAB,
     }),
     handleTabClick(tab) {
