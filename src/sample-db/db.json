@@ -1,0 +1,247 @@
+{
+  "employees": [
+    {
+      "id": 0,
+      "firstName": "Eden",
+      "lastName": "Shaw",
+      "position": {
+        "id": 0,
+        "name": "Cashier"
+      },
+      "branch": {
+        "id": 0,
+        "name": "Quezon City"
+      },
+      "employedOn": "March 19, 2018",
+      "employmentStatus": {
+        "id": 0,
+        "name": "Regular"
+      },
+      "birthDate": "November 11, 1990",
+      "contactNumber": "+63 9454 539 381",
+      "address": "3208 W Belt Line Rd Yakima, Delaware 23307, United States",
+      "emergencyContact": {
+        "contactPerson": "Leighton Davis",
+        "relationship": "Husband",
+        "contactNumber": "+63 9454 539 382",
+        "address": "3208 W Belt Line Rd Yakima, Delaware 23307, United States"
+      }
+    },
+    {
+      "id": 1,
+      "firstName": "Nathan",
+      "lastName": "Moore",
+      "position": {
+        "id": 0,
+        "name": "Guard"
+      },
+      "branch": {
+        "id": 0,
+        "name": "Cavite"
+      },
+      "employedOn": "March 20, 2019",
+      "employmentStatus": {
+        "id": 0,
+        "name": "Probation"
+      },
+      "birthDate": "January 11, 1990",
+      "contactNumber": "+63 9454 539 381",
+      "address": "8369 T Jet Line Rd Yakima, Delaware 23307, Philippines",
+      "emergencyContact": {
+        "contactPerson": "Filip Newman",
+        "relationship": "Father",
+        "contactNumber": "+63 3454 539 382",
+        "address": "8369 T Jet Line Rd Yakima, Delaware 23307, Philippines"
+      }
+    },
+    {
+      "id": 2,
+      "firstName": "Bobby",
+      "lastName": "Fraser",
+      "position": {
+        "id": 0,
+        "name": "Cashier"
+      },
+      "branch": {
+        "id": 0,
+        "name": "Bulacan"
+      },
+      "employedOn": "March 19, 2018",
+      "employmentStatus": {
+        "id": 2,
+        "name": "Part-time"
+      },
+      "birthDate": "December 01, 1996",
+      "contactNumber": "+63 9464 140 311",
+      "address": "3208 W Belt Line Rd Yakima, Delaware 23307, United States",
+      "emergencyContact": {
+        "contactPerson": "Leighton Davis",
+        "relationship": "Husband",
+        "contactNumber": "+63 9454 539 382",
+        "address": "3208 W Belt Line Rd Yakima, Delaware 23307, United States"
+      }
+    },
+    {
+      "id": 3,
+      "firstName": "Edwin",
+      "lastName": "Cooke",
+      "position": {
+        "id": 0,
+        "name": "Cashier"
+      },
+      "branch": {
+        "id": 0,
+        "name": "Quezon City"
+      },
+      "employedOn": "March 19, 2018",
+      "employmentStatus": {
+        "id": 0,
+        "name": "Regular"
+      },
+      "birthDate": "May 01, 1991",
+      "contactNumber": "+63 9554 139 381",
+      "address": "3208 W Belt Line Rd Yakima, Delaware 23307, United States",
+      "emergencyContact": {
+        "contactPerson": "Kobi Hopkins",
+        "relationship": "Husband",
+        "contactNumber": "+63 9454 539 382",
+        "address": "3208 W Belt Line Rd Yakima, Delaware 23307, United States"
+      }
+    },
+    {
+      "id": 4,
+      "firstName": "Freddy",
+      "lastName": "Jackson",
+      "position": {
+        "id": 0,
+        "name": "Cashier"
+      },
+      "branch": {
+        "id": 0,
+        "name": "Singapore"
+      },
+      "employedOn": "April 20, 2019",
+      "employmentStatus": {
+        "id": 1,
+        "name": "Probation"
+      },
+      "birthDate": "November 11, 1990",
+      "contactNumber": "+63 9454 539 381",
+      "address": "3208 W Belt Line Rd Yakima, Delaware 23307, United States",
+      "emergencyContact": {
+        "contactPerson": "Leighton Davis",
+        "relationship": "Husband",
+        "contactNumber": "+63 9454 539 382",
+        "address": "3208 W Belt Line Rd Yakima, Delaware 23307, United States"
+      }
+    },
+    {
+      "id": 5,
+      "firstName": "Remy",
+      "lastName": "Davidson",
+      "position": {
+        "id": 4,
+        "name": "Salesman"
+      },
+      "branch": {
+        "id": 0,
+        "name": "Quezon City"
+      },
+      "employedOn": "June 23, 2018",
+      "employmentStatus": {
+        "id": 0,
+        "name": "Regular"
+      },
+      "birthDate": "January 01, 1956",
+      "contactNumber": "+63 9454 539 381",
+      "address": "3208 W Belt Line Rd Yakima, Delaware 23307, United States",
+      "emergencyContact": {
+        "contactPerson": "Leighton Davis",
+        "relationship": "Husband",
+        "contactNumber": "+63 9454 539 382",
+        "address": "3208 W Belt Line Rd Yakima, Delaware 23307, United States"
+      }
+    },
+    {
+      "id": 0,
+      "firstName": "Eden",
+      "lastName": "Shaw",
+      "position": {
+        "id": 0,
+        "name": "Cashier"
+      },
+      "branch": {
+        "id": 0,
+        "name": "Quezon City"
+      },
+      "employedOn": "March 19, 2018",
+      "employmentStatus": {
+        "id": 0,
+        "name": "Regular"
+      },
+      "birthDate": "November 11, 1990",
+      "contactNumber": "+63 9454 539 381",
+      "address": "3208 W Belt Line Rd Yakima, Delaware 23307, United States",
+      "emergencyContact": {
+        "contactPerson": "Leighton Davis",
+        "relationship": "Husband",
+        "contactNumber": "+63 9454 539 382",
+        "address": "3208 W Belt Line Rd Yakima, Delaware 23307, United States"
+      }
+    },
+    {
+      "id": 0,
+      "firstName": "Eden",
+      "lastName": "Shaw",
+      "position": {
+        "id": 0,
+        "name": "Cashier"
+      },
+      "branch": {
+        "id": 0,
+        "name": "Quezon City"
+      },
+      "employedOn": "March 19, 2018",
+      "employmentStatus": {
+        "id": 0,
+        "name": "Regular"
+      },
+      "birthDate": "November 11, 1990",
+      "contactNumber": "+63 9454 539 381",
+      "address": "3208 W Belt Line Rd Yakima, Delaware 23307, United States",
+      "emergencyContact": {
+        "contactPerson": "Leighton Davis",
+        "relationship": "Husband",
+        "contactNumber": "+63 9454 539 382",
+        "address": "3208 W Belt Line Rd Yakima, Delaware 23307, United States"
+      }
+    },
+    {
+      "id": 0,
+      "firstName": "Eden",
+      "lastName": "Shaw",
+      "position": {
+        "id": 0,
+        "name": "Cashier"
+      },
+      "branch": {
+        "id": 0,
+        "name": "Quezon City"
+      },
+      "employedOn": "March 19, 2018",
+      "employmentStatus": {
+        "id": 0,
+        "name": "Regular"
+      },
+      "birthDate": "November 11, 1990",
+      "contactNumber": "+63 9454 539 381",
+      "address": "3208 W Belt Line Rd Yakima, Delaware 23307, United States",
+      "emergencyContact": {
+        "contactPerson": "Leighton Davis",
+        "relationship": "Husband",
+        "contactNumber": "+63 9454 539 382",
+        "address": "3208 W Belt Line Rd Yakima, Delaware 23307, United States"
+      }
+    }
+  ]
+}

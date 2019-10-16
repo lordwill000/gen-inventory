@@ -7,13 +7,13 @@
 
 <script>
 import TableHeader from './TableHeader.vue';
-import TableRow from './TableRow.vue';
+// import TableRow from './TableRow.vue';
 
 export default {
   name: 'Table',
   components: {
     TableHeader,
-    TableRow,
+    // TableRow,
   },
   props: {
     headers: {

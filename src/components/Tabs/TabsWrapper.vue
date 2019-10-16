@@ -21,8 +21,8 @@ import { setTimeout } from 'timers';
 import Tab from './Tab.vue';
 
 const {
-  mapGetters: mapAdminGetters,
-} = createNamespacedHelpers('admin');
+  mapGetters: mapAppGetters,
+} = createNamespacedHelpers('app');
 
 export default {
   name: 'TabsWrapper',
@@ -36,7 +36,7 @@ export default {
     },
   },
   computed: {
-    ...mapAdminGetters({
+    ...mapAppGetters({
       activeTab: 'getActiveTab',
     }),
   },

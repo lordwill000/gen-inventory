@@ -32,12 +32,12 @@
 <script>
 import { createNamespacedHelpers } from 'vuex';
 import { mixin as clickaway } from 'vue-clickaway';
-import types from '@/store/modules/admin/types';
+import types from '@/store/modules/app/types';
 import { helpers } from '@/mixins';
 
 const {
   mapActions: mapAdminActions,
-} = createNamespacedHelpers('admin');
+} = createNamespacedHelpers('app');
 
 export default {
   name: 'Header',

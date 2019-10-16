@@ -18,7 +18,7 @@
 
 <script>
 import { createNamespacedHelpers } from 'vuex';
-import types from '@/store/modules/admin/types';
+import types from '@/store/modules/app/types';
 import TableControls from '@/components/TableControls.vue';
 import Table from '@/components/Table/Table.vue';
 import MainContent from '@/components/MainContent.vue';
@@ -27,9 +27,9 @@ import {
 } from './variables';
 
 const {
-  mapGetters: mapAdminGetters,
+  mapGetters: mapAppGetters,
   mapActions: mapAdminActions,
-} = createNamespacedHelpers('admin');
+} = createNamespacedHelpers('app');
 
 export default {
   name: 'Employees',
@@ -46,9 +46,10 @@ export default {
     mainOffsetTop: 0,
   }),
   computed: {
-    ...mapAdminGetters({
+    ...mapAppGetters({
       activeTab: 'getActiveTab',
       headerHeight: 'getHeaderHeight',
+      // employees: 'getEmployees',
     }),
   },
   mounted() {
@@ -59,6 +60,7 @@ export default {
   methods: {
     ...mapAdminActions({
       setActiveTab: types.SET_ACTIVE_TAB,
+      // fetchEmployees: types.FETCH_EMPLOYEES,
     }),
     onTabClick(val) {
       console.log(val);
