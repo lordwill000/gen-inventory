@@ -104,7 +104,6 @@ export default {
           &.router-link-active,
           &:hover {
             color: #fff;
-            font-family: 'RedHatBold';
             text-decoration: none;
           }
         }
