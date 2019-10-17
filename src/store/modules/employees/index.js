@@ -3,7 +3,6 @@ import getters from './getters';
 import mutations from './mutations';
 
 const state = {
-  isLoading: true,
   isFetching: true,
   data: [],
   error: null,

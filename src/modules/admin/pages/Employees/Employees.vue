@@ -5,14 +5,15 @@
       :tabs="tableTabs"
       :controls="tableControls"
     />
-    <MainContent :offset="mainOffsetTop">
-      <Table
-        v-if="activeTab.tab.val === 'employee_management'
-          || activeTab.tab.val === 'role_and_permissions'"
-        :headers="activeTab.tab.val === 'employee_management'
-          ? employeeMngmntTableHeader : rolesTableHeader"
-      />
-    </MainContent>
+    <Table
+      v-if="activeTab.tab.val === 'employee_management'
+        || activeTab.tab.val === 'role_and_permissions'"
+      :headers="activeTab.tab.val === 'employee_management'
+        ? employeeMngmntTableHeader : rolesTableHeader"
+      :data="employees"
+      :bordered-cell="activeTab.tab.val === 'role_and_permissions' ? true : false"
+      :is-fetching="isFetching"
+    />
   </div>
 </template>
 
@@ -22,7 +23,6 @@ import { types as appTypes } from '@/store/modules/app/actions';
 import { types as employeesTypes } from '@/store/modules/employees/actions';
 import TableControls from '@/components/TableControls.vue';
 import Table from '@/components/Table/Table.vue';
-import MainContent from '@/components/MainContent.vue';
 import {
   tableTabs, tableControls, employeeMngmntTableHeader, rolesTableHeader,
 } from './variables';
@@ -42,7 +42,6 @@ export default {
   components: {
     TableControls,
     Table,
-    MainContent,
   },
   data: () => ({
     tableTabs,
@@ -54,11 +53,26 @@ export default {
   computed: {
     ...mapAppGetters({
       activeTab: 'getActiveTab',
-      headerHeight: 'getHeaderHeight',
+      // headerHeight: 'getHeaderHeight',
     }),
     ...mapEmployeGetters({
       employees: 'data',
+      isFetching: 'isFetching',
     }),
+  },
+  watch: {
+    activeTab(tab) {
+      switch (tab.val) {
+        case 'employee_management':
+          this.fetchEmployees();
+          break;
+        case 'role_and_permissions':
+          console.log('roles');
+          break;
+        default:
+          console.log('attendance');
+      }
+    },
   },
   mounted() {
     this.$nextTick(() => {
@@ -73,9 +87,6 @@ export default {
     ...mapEmployeActions({
       fetchEmployees: employeesTypes.REQUEST,
     }),
-    onTabClick(val) {
-      console.log(val);
-    },
   },
 };
 </script>

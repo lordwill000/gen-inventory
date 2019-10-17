@@ -54,26 +54,32 @@ export const employeeMngmntTableHeader = [
     id: 0,
     label: 'ID',
     hide: true,
+    width: '5',
   },
   {
     id: 1,
     label: 'Name',
+    width: '15',
   },
   {
     id: 2,
     label: 'Position',
+    width: '15',
   },
   {
     id: 3,
     label: 'Branch',
+    width: '30',
   },
   {
     id: 4,
     label: 'Date of Employment',
+    width: '15',
   },
   {
     id: 5,
     label: 'Employment Status',
+    width: '15',
   },
 ];
 

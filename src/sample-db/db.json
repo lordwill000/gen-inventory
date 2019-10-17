@@ -163,7 +163,7 @@
       }
     },
     {
-      "id": 0,
+      "id": 6,
       "firstName": "Eden",
       "lastName": "Shaw",
       "position": {
@@ -190,7 +190,7 @@
       }
     },
     {
-      "id": 0,
+      "id": 7,
       "firstName": "Eden",
       "lastName": "Shaw",
       "position": {
@@ -217,12 +217,39 @@
       }
     },
     {
-      "id": 0,
+      "id": 8,
       "firstName": "Eden",
       "lastName": "Shaw",
       "position": {
         "id": 0,
         "name": "Cashier"
+      },
+      "branch": {
+        "id": 0,
+        "name": "Quezon City"
+      },
+      "employedOn": "March 19, 2018",
+      "employmentStatus": {
+        "id": 0,
+        "name": "Regular"
+      },
+      "birthDate": "November 11, 1990",
+      "contactNumber": "+63 9454 539 381",
+      "address": "3208 W Belt Line Rd Yakima, Delaware 23307, United States",
+      "emergencyContact": {
+        "contactPerson": "Leighton Davis",
+        "relationship": "Husband",
+        "contactNumber": "+63 9454 539 382",
+        "address": "3208 W Belt Line Rd Yakima, Delaware 23307, United States"
+      }
+    },
+    {
+      "id": 9,
+      "firstName": "Cinderella",
+      "lastName": "Cuya",
+      "position": {
+        "id": 0,
+        "name": "Crew"
       },
       "branch": {
         "id": 0,
