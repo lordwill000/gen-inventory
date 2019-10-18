@@ -1,7 +1,10 @@
 <template>
   <div class="table__controls-wrapper">
     <div class="table__controls-col tabs-wrapper">
-      <TabsWrapper :tabs="tabs" />
+      <TabsWrapper
+        :tabs="tabs"
+        @tabChanged="handleTabChanged"
+      />
     </div>
     <div class="table__controls-col btns-wrapper">
       <Button
@@ -46,8 +49,11 @@ export default {
   mounted() {
   },
   methods: {
-    onTableControlClick: (event) => {
-      console.log(event);
+    onTableControlClick(event) {
+      this.$emit('controlSelected', event);
+    },
+    handleTabChanged(tab) {
+      this.$emit('onTabChanged', tab);
     },
   },
 };

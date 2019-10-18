@@ -7,24 +7,50 @@
     <main>
       <router-view />
     </main>
+    <Modal v-if="modal.isVisible">
+      <!-- {{ modal.children }} -->
+      <component
+        :is="component"
+      />
+    </Modal>
   </div>
 </template>
 
 
 <script>
+import { createNamespacedHelpers } from 'vuex';
 import Header from '@/components/Header.vue';
 import Sidebar from '@/components/Sidebar.vue';
+import Modal from '@/components/Modal.vue';
 import adminRoutes from './routes';
+
+const {
+  mapGetters: mapAppGetters,
+} = createNamespacedHelpers('app');
 
 export default {
   name: 'Admin',
   components: {
     Header,
     Sidebar,
+    Modal,
   },
-  data: () => ({
-    routes: adminRoutes,
-  }),
+  data() {
+    return {
+      routes: adminRoutes,
+      component: null,
+    };
+  },
+  computed: {
+    ...mapAppGetters({
+      modal: 'getModal',
+    }),
+  },
+  watch: {
+    modal(modal) {
+      this.component = modal.children;
+    },
+  },
 };
 </script>
 

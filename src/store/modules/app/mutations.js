@@ -7,4 +7,7 @@ export default {
   [types.GET_HEADER_HEIGHT]: ((state, payload) => {
     state.headerHeight = payload;
   }),
+  [types.INIT_MODAL]: ((state, payload) => {
+    state.modal = payload;
+  }),
 };

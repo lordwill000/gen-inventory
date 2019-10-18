@@ -7,6 +7,7 @@
       :data="tab"
       class="tab"
       :class="{'--last': i == tabs.length - 1}"
+      @tabChanged="handleTabChanged"
     />
     <div
       ref="indicator"
@@ -50,6 +51,11 @@ export default {
     setTimeout(() => {
       this.$refs.indicator.style.display = 'block';
     }, 10);
+  },
+  methods: {
+    handleTabChanged(data) {
+      this.$emit('tabChanged', data);
+    },
   },
 };
 </script>

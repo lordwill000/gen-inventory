@@ -1,9 +1,7 @@
 export const types = {
   SET_ACTIVE_TAB: 'SET_ACTIVE_TAB',
   GET_HEADER_HEIGHT: 'GET_HEADER_HEIGHT',
-  FETCH_EMPLOYEES: 'FETCH_EMPLOYEES',
-  FETCH_EMPLOYEES_STATUS: 'FETCH_EMPLOYEES_STATUS',
-  FETCH_EMPLOYEES_FAIL: 'FETCH_EMPLOYEES_FAIL',
+  INIT_MODAL: 'INIT_MODAL',
 };
 
 const actions = {
@@ -12,6 +10,9 @@ const actions = {
   },
   [types.GET_HEADER_HEIGHT]: ({ commit }, payload) => {
     commit(types.GET_HEADER_HEIGHT, payload);
+  },
+  [types.INIT_MODAL]: ({ commit }, payload) => {
+    commit(types.INIT_MODAL, payload);
   },
 };
 

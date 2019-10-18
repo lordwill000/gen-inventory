@@ -13,7 +13,10 @@ const state = {
     },
   },
   headerHeight: 0,
-  employees: [],
+  modal: {
+    isVisible: false,
+    children: null,
+  },
 };
 
 export default {

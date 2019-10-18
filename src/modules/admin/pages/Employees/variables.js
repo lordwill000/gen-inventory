@@ -42,11 +42,6 @@ export const tableTabs = [
     label: 'Attendance',
     val: 'attendance',
   },
-  {
-    id: 2,
-    label: 'Role & Permissions',
-    val: 'role_and_permissions',
-  },
 ];
 
 export const employeeMngmntTableHeader = [

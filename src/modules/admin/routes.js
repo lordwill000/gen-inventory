@@ -1,5 +1,5 @@
 import {
-  Admin, Overview, Employees, Racks, StorePartners, Branches, Utilities, Reports,
+  Admin, Overview, Employees, Racks, StorePartners, Branches, Utilities, Reports, Roles,
 } from './index';
 
 export default [
@@ -43,6 +43,11 @@ export default [
         path: 'reports',
         name: 'reports',
         component: Reports,
+      },
+      {
+        path: 'roles',
+        name: 'roles',
+        component: Roles,
       },
     ],
   },

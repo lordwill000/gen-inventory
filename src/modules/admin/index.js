@@ -7,4 +7,5 @@ module.exports = {
   Branches: () => import('./pages/Branches.vue'),
   Utilities: () => import('./pages/Utilities.vue'),
   Reports: () => import('./pages/Reports.vue'),
+  Roles: () => import('./pages/Roles.vue'),
 };

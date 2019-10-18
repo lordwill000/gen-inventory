@@ -88,7 +88,7 @@ export default {
     ul {
       list-style-type: none;
       margin-bottom: 0;
-      margin-top: 120px;
+      margin-top: 60px;
       padding-left: 0;
       li {
         padding-left: 50px;

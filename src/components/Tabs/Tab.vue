@@ -3,7 +3,7 @@
     role="tab"
     class="tab"
     :class="{'active': activeTab.tab.id === data.id}"
-    @click="handleTabClick(data)"
+    @click="$emit('tabChanged', data)"
   >
     {{ data.label }}
     <span
@@ -39,12 +39,6 @@ export default {
     ...mapAppActions({
       setActiveTab: types.SET_ACTIVE_TAB,
     }),
-    handleTabClick(tab) {
-      this.setActiveTab({
-        module: this.$route.name,
-        tab,
-      });
-    },
   },
 };
 </script>

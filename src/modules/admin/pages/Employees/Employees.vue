@@ -4,14 +4,14 @@
       ref="tableHeader"
       :tabs="tableTabs"
       :controls="tableControls"
+      @controlSelected="onControlClicked"
+      @onTabChanged="onTabClicked"
     />
     <Table
-      v-if="activeTab.tab.val === 'employee_management'
-        || activeTab.tab.val === 'role_and_permissions'"
-      :headers="activeTab.tab.val === 'employee_management'
-        ? employeeMngmntTableHeader : rolesTableHeader"
+      v-if="activeTab.tab.val === 'employee_management'"
+      :headers="employeeMngmntTableHeader"
       :data="employees"
-      :bordered-cell="activeTab.tab.val === 'role_and_permissions' ? true : false"
+      :bordered-cell="false"
       :is-fetching="isFetching"
     />
   </div>
@@ -24,8 +24,9 @@ import { types as employeesTypes } from '@/store/modules/employees/actions';
 import TableControls from '@/components/TableControls.vue';
 import Table from '@/components/Table/Table.vue';
 import {
-  tableTabs, tableControls, employeeMngmntTableHeader, rolesTableHeader,
+  tableTabs, tableControls, employeeMngmntTableHeader,
 } from './variables';
+import AddEmployeeForm from './AddEmployeeForm.vue';
 
 const {
   mapGetters: mapAppGetters,
@@ -47,7 +48,6 @@ export default {
     tableTabs,
     tableControls,
     employeeMngmntTableHeader,
-    rolesTableHeader,
     mainOffsetTop: 0,
   }),
   computed: {
@@ -66,9 +66,6 @@ export default {
         case 'employee_management':
           this.fetchEmployees();
           break;
-        case 'role_and_permissions':
-          console.log('roles');
-          break;
         default:
           console.log('attendance');
       }
@@ -83,10 +80,37 @@ export default {
   methods: {
     ...mapAppActions({
       setActiveTab: appTypes.SET_ACTIVE_TAB,
+      initModal: appTypes.INIT_MODAL,
     }),
     ...mapEmployeActions({
       fetchEmployees: employeesTypes.REQUEST,
     }),
+    onControlClicked(control) {
+      switch (control) {
+        case 'add_employee':
+          this.initModal({
+            isVisible: true,
+            children: AddEmployeeForm,
+          });
+          break;
+        default:
+          console.log(control);
+      }
+    },
+    onTabClicked(tab) {
+      this.setActiveTab({
+        module: this.$route.name,
+        tab,
+      });
+
+      switch (tab.val) {
+        case 'employee_management':
+          this.fetchEmployees();
+          break;
+        default:
+          console.log('attendance');
+      }
+    },
   },
 };
 </script>
