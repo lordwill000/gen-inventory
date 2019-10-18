@@ -4,6 +4,7 @@
       Fill-up the form below ({{ currentStep }} of 3)
     </p>
     <div class="form-step__wrapper">
+      <h6>{{ currentFormTitle }}</h6>
       <ProfileInformation v-if="currentStep === 1" />
       <EmergencyContact v-if="currentStep === 2" />
       <WorkSchedule v-if="currentStep === 3" />
@@ -32,7 +33,7 @@
           mode="transparent"
           style="margin-right: 8px; min-width: 90px; color: #898989"
           label="Skip"
-          @clicked="onControlClick('skip')"
+          @clicked="onControlClick('next')"
         />
         <Button
           class="d-inline-block w-auto"
@@ -77,24 +78,32 @@ export default {
   },
   data: () => ({
     currentStep: 1,
+    currentFormTitle: 'Profile Information',
   }),
+  watch: {
+    currentStep(step) {
+      switch (step) {
+        case 1:
+          this.currentFormTitle = 'Profile Information';
+          break;
+        case 2:
+          this.currentFormTitle = 'Emergency Contact';
+          break;
+        default:
+          this.currentFormTitle = 'Work Schedule';
+      }
+    },
+  },
   methods: {
     onControlClick(type) {
       switch (type) {
         case 'minus':
-          console.log('minus');
           this.currentStep = this.currentStep - 1;
           break;
-        case 'skip':
-          console.log('skip');
-          this.currentStep = 3;
-          break;
         case 'next':
-          console.log('next');
           this.currentStep = this.currentStep + 1;
           break;
         case 'close':
-          console.log('close');
           this.$emit('closed');
           break;
         default:
@@ -112,6 +121,12 @@ export default {
   }
   .form-step__wrapper {
     margin-top: 48px;
+    & > h6 {
+      color: $accent;
+      letter-spacing: 1px;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+    }
   }
   .form-step__control {
     display: flex;
