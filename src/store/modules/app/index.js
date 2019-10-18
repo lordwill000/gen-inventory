@@ -16,6 +16,11 @@ const state = {
   modal: {
     isVisible: false,
     children: null,
+    header: 'Header',
+    dimensions: {
+      maxHeight: '610px',
+      width: '615px',
+    },
   },
 };
 

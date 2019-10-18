@@ -37,7 +37,8 @@ export default {
 
 <style lang="scss" scoped>
 button {
-  border: none;
+  border: 1px solid;
+  border-color: transparent;
   border-radius: 5px;
   display: block;
   @include font-size(12);
@@ -57,6 +58,27 @@ button {
     &--transparent {
       background-color: transparent;
       color: $accent;
+    }
+    &--outline {
+      background-color: transparent;
+      border-color: $accent;
+      color: $accent;
+      svg, svg path {
+        fill: $accent;
+      }
+      &:hover {
+        background-color: $accent;
+        color: #fff;
+        svg,
+        svg path {
+          fill: #fff;
+        }
+      }
+    }
+    &--muted {
+      background-color: $tertiary;
+      border-color: $secondary;
+      color: $secondary;
     }
   }
   img {

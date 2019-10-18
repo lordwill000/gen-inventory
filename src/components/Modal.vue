@@ -1,7 +1,7 @@
 <template>
   <div class="modal modal__container">
     <div
-      v-click-outside="onModalClose"
+      v-on-clickaway="onModalClose"
       class="modal__content"
       :style="dimensions"
     >
@@ -13,7 +13,6 @@
           @click="onModalClose"
         >
       </div>
-      content
       <slot />
     </div>
   </div>
@@ -21,7 +20,7 @@
 
 <script>
 import { createNamespacedHelpers } from 'vuex';
-import vClickOutside from 'v-click-outside';
+import { mixin as clickaway } from 'vue-clickaway';
 import { types as appTypes } from '@/store/modules/app/actions';
 
 const {
@@ -30,9 +29,7 @@ const {
 
 export default {
   name: 'Modal',
-  directives: {
-    clickOutside: vClickOutside.directive,
-  },
+  mixins: [clickaway],
   props: {
     header: {
       type: String,
@@ -41,7 +38,7 @@ export default {
     dimensions: {
       type: Object,
       default: () => ({
-        height: '610px',
+        maxHeight: '610px',
         width: '615px',
       }),
     },
@@ -92,6 +89,7 @@ export default {
       border-radius: 8px;
       box-shadow: 0px 3px 16px rgba(0, 0, 0, 0.12);
       margin: auto;
+      overflow-y: auto;
       padding: 40px;
       position: relative;
       &--heading {

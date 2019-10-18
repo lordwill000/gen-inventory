@@ -8,6 +8,6 @@ export default {
     state.headerHeight = payload;
   }),
   [types.INIT_MODAL]: ((state, payload) => {
-    state.modal = payload;
+    state.modal = { ...payload };
   }),
 };

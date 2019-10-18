@@ -26,7 +26,7 @@ import Table from '@/components/Table/Table.vue';
 import {
   tableTabs, tableControls, employeeMngmntTableHeader,
 } from './variables';
-import AddEmployeeForm from './AddEmployeeForm.vue';
+import AddEmployeeForm from './AddEmployeeForm/AddEmployeeForm.vue';
 
 const {
   mapGetters: mapAppGetters,
@@ -60,17 +60,6 @@ export default {
       isFetching: 'isFetching',
     }),
   },
-  watch: {
-    activeTab(tab) {
-      switch (tab.val) {
-        case 'employee_management':
-          this.fetchEmployees();
-          break;
-        default:
-          console.log('attendance');
-      }
-    },
-  },
   mounted() {
     this.$nextTick(() => {
       this.mainOffsetTop = this.headerHeight + this.$refs.tableHeader.$el.clientHeight;
@@ -90,6 +79,7 @@ export default {
         case 'add_employee':
           this.initModal({
             isVisible: true,
+            header: 'Add Employee',
             children: AddEmployeeForm,
           });
           break;

@@ -7,10 +7,17 @@
     <main>
       <router-view />
     </main>
-    <Modal v-if="modal.isVisible">
-      <!-- {{ modal.children }} -->
+    <Modal
+      v-if="modal.isVisible"
+      :header="modal.header"
+      :dimensions="modal.dimensions"
+    >
       <component
         :is="component"
+        @closed="initModal({
+          isVisible: false,
+          children: null
+        })"
       />
     </Modal>
   </div>
@@ -19,6 +26,7 @@
 
 <script>
 import { createNamespacedHelpers } from 'vuex';
+import { types as appTypes } from '@/store/modules/app/actions';
 import Header from '@/components/Header.vue';
 import Sidebar from '@/components/Sidebar.vue';
 import Modal from '@/components/Modal.vue';
@@ -26,6 +34,7 @@ import adminRoutes from './routes';
 
 const {
   mapGetters: mapAppGetters,
+  mapActions: mapAppActions,
 } = createNamespacedHelpers('app');
 
 export default {
@@ -50,6 +59,14 @@ export default {
     modal(modal) {
       this.component = modal.children;
     },
+  },
+  mounted() {
+    this.component = this.modal.children;
+  },
+  methods: {
+    ...mapAppActions({
+      initModal: appTypes.INIT_MODAL,
+    }),
   },
 };
 </script>
