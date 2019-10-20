@@ -1,17 +1,17 @@
 <template>
   <div class="profile-information">
     <div class="form__grid">
-      <Input
+      <InputField
         style="width: 240px; padding-right: 8px;"
         label="First Name"
         placeholder="John"
       />
-      <Input
+      <InputField
         style="width: 200px; padding-right: 8px;"
         label="Last Name"
         placeholder="Smith"
       />
-      <Input
+      <InputField
         style="width: 80px;"
         label="MI"
         placeholder="A"
@@ -36,7 +36,7 @@
       label="Contact Number"
       placeholder="9123456789"
     />
-    <TextArea
+    <TextField
       placeholder="Input full address"
       label="Full Address"
     />
@@ -45,18 +45,18 @@
 
 <script>
 import {
-  Input, RadioButton, Datepicker, ContactNumber, TextArea,
+  InputField, RadioButton, Datepicker, ContactNumber, TextField,
 } from '@/components/form-controls/';
 import { gender } from './variables';
 
 export default {
   name: 'ProfileInformation',
   components: {
-    Input,
+    InputField,
     RadioButton,
     Datepicker,
     ContactNumber,
-    TextArea,
+    TextField,
   },
   data: () => ({
     gender,

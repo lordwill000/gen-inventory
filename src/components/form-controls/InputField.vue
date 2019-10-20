@@ -1,6 +1,7 @@
 <template>
   <div class="form__group">
     <label class="form__label">{{ label }}</label>
+    <slot />
     <input
       :type="type"
       :placeholder="placeholder"
@@ -12,7 +13,7 @@
 
 <script>
 export default {
-  name: 'Input',
+  name: 'InputField',
   components: {
   },
   props: {

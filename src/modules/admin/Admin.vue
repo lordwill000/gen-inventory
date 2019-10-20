@@ -13,7 +13,7 @@
       :dimensions="modal.dimensions"
     >
       <component
-        :is="component"
+        :is="modal.children"
         @closed="initModal({
           isVisible: false,
           children: null
@@ -54,14 +54,6 @@ export default {
     ...mapAppGetters({
       modal: 'getModal',
     }),
-  },
-  watch: {
-    modal(modal) {
-      this.component = modal.children;
-    },
-  },
-  mounted() {
-    this.component = this.modal.children;
   },
   methods: {
     ...mapAppActions({

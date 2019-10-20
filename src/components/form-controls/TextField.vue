@@ -1,6 +1,11 @@
 <template>
-  <div class="form__group textarea">
-    <label class="form__label">{{ label }}</label>
+  <div class="form__group textField">
+    <label
+      class="form__label"
+    >
+      {{ label }}
+      <slot />
+    </label>
     <textarea
       :placeholder="placeholder"
       class="form__control textarea"
@@ -8,10 +13,9 @@
     />
   </div>
 </template>
-
 <script>
 export default {
-  name: 'Input',
+  name: 'TextField',
   components: {
   },
   props: {
@@ -31,5 +35,9 @@ export default {
 .textarea {
   height: 95px;
   resize: none;
+  .form__label {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 </style>

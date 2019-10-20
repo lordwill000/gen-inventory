@@ -28,7 +28,7 @@
 import moment from 'moment';
 
 export default {
-  name: 'Input',
+  name: 'InputField',
   props: {
     placeholder: {
       type: String,

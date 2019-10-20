@@ -22,7 +22,7 @@ import { setTimeout } from 'timers';
 import Tab from './Tab.vue';
 
 const {
-  mapGetters: mapAppGetters,
+  mapState: mapAppState,
 } = createNamespacedHelpers('app');
 
 export default {
@@ -37,9 +37,7 @@ export default {
     },
   },
   computed: {
-    ...mapAppGetters({
-      activeTab: 'getActiveTab',
-    }),
+    ...mapAppState(['activeTab']),
   },
   watch: {
     activeTab(tab) {

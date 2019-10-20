@@ -1,8 +1,8 @@
 module.exports = {
-  Input: () => import('./Input.vue'),
+  InputField: () => import('./InputField.vue'),
   Checkbox: () => import('./Checkbox.vue'),
   RadioButton: () => import('./RadioButton.vue'),
   Datepicker: () => import('./Datepicker.vue'),
   ContactNumber: () => import('./ContactNumber.vue'),
-  TextArea: () => import('./TextArea.vue'),
+  TextField: () => import('./TextField.vue'),
 };

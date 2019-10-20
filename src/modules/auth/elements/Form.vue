@@ -7,13 +7,13 @@
       {{ formSubtitle }}
     </p>
     <form @submit.prevent="$emit('submitted')">
-      <Input
+      <InputField
         v-model="formData.username"
         label="Username"
         type="text"
         placeholder="Type your username"
       />
-      <Input
+      <InputField
         v-model="formData.password"
         label="Password"
         type="password"
@@ -42,14 +42,14 @@
 </template>
 
 <script>
-import { Input, Checkbox } from '@/components/form-controls';
+import { InputField, Checkbox } from '@/components/form-controls';
 import Button from '@/components/Button.vue';
 
 export default {
   name: 'Form',
   components: {
     Button,
-    Input,
+    InputField,
     Checkbox,
   },
   data: () => ({

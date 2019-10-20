@@ -23,7 +23,7 @@
 import { helpers } from '@/mixins';
 
 export default {
-  name: 'Input',
+  name: 'InputField',
   mixins: [helpers],
   props: {
     placeholder: {
