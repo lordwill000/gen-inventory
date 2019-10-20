@@ -31,3 +31,8 @@
     width: 100% !important;
   }
 }
+
+.no-event {
+  cursor: not-allowed;
+  pointer-events: none;
+}

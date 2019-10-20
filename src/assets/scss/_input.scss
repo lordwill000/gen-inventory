@@ -1,4 +1,7 @@
 .form {
+  &__grid {
+    display: flex;
+  }
   &__label {
     color: $secondary;
     display: block;

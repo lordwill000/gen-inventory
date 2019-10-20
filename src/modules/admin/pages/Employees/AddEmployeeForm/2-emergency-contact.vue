@@ -1,6 +1,6 @@
 <template>
   <div class="emergency-contact">
-    <div class="form__grid">
+    <div class="d-flex">
       <InputField
         style="width: 240px; padding-right: 8px;"
         label="First Name"
@@ -65,7 +65,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.form__grid {
-  display: flex;
-}
 </style>

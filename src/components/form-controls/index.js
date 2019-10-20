@@ -5,4 +5,6 @@ module.exports = {
   Datepicker: () => import('./Datepicker.vue'),
   ContactNumber: () => import('./ContactNumber.vue'),
   TextField: () => import('./TextField.vue'),
+  Dropdown: () => import('./Dropdown.vue'),
+  Timepicker: () => import('./Timepicker.vue'),
 };

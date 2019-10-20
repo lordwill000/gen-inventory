@@ -270,5 +270,61 @@
         "address": "3208 W Belt Line Rd Yakima, Delaware 23307, United States"
       }
     }
+  ],
+  "positions": [
+    {
+      "id": 0,
+      "name": "Branch Manager",
+      "val": "branch_manager"
+    },
+    {
+      "id": 1,
+      "name": "Owner",
+      "val": "owner"
+    },
+    {
+      "id": 2,
+      "name": "Cashier",
+      "val": "cashier"
+    },
+    {
+      "id": 3,
+      "name": "Crew",
+      "val": "crew"
+    }
+  ],
+  "branches": [
+    {
+      "id": 0,
+      "name": "Manila",
+      "val": "manila"
+    },
+    {
+      "id": 2,
+      "name": "Cavite",
+      "val": "cavite"
+    },
+    {
+      "id": 3,
+      "name": "Bulacan",
+      "val": "bulacan"
+    }
+  ],
+  "employment": [
+    {
+      "id": 0,
+      "name": "Regular",
+      "val": "regular"
+    },
+    {
+      "id": 2,
+      "name": "Probation",
+      "val": "probation"
+    },
+    {
+      "id": 3,
+      "name": "Part-time",
+      "val": "part-time"
+    }
   ]
 }
