@@ -33,7 +33,7 @@
           mode="transparent"
           style="margin-right: 8px; min-width: 90px; color: #898989"
           label="Skip"
-          @clicked="onControlClick('next')"
+          @clicked="onControlClick('skip')"
         />
         <Button
           class="d-inline-block w-auto"
@@ -100,6 +100,9 @@ export default {
         case 'minus':
           this.currentStep = this.currentStep - 1;
           break;
+        case 'skip':
+          this.currentStep = this.currentStep + 1;
+          break;
         case 'next':
           this.currentStep = this.currentStep + 1;
           break;
@@ -124,7 +127,7 @@ export default {
     & > h6 {
       color: $accent;
       letter-spacing: 1px;
-      margin-bottom: 30px;
+      margin-bottom: 32px;
       text-transform: uppercase;
     }
   }

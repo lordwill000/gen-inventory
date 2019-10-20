@@ -25,3 +25,9 @@
 .fw-r {
   font-family: 'RedHatRegular';
 }
+
+.w-100-md {
+  @media(max-width: 767px) {
+    width: 100% !important;
+  }
+}

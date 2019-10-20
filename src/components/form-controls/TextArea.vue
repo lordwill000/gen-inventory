@@ -1,12 +1,11 @@
 <template>
-  <div class="form__group">
+  <div class="form__group textarea">
     <label class="form__label">{{ label }}</label>
-    <input
-      :type="type"
+    <textarea
       :placeholder="placeholder"
-      class="form__control"
+      class="form__control textarea"
       @input="$emit('input', $event.target.value)"
-    >
+    />
   </div>
 </template>
 
@@ -16,10 +15,6 @@ export default {
   components: {
   },
   props: {
-    type: {
-      type: String,
-      default: 'text',
-    },
     placeholder: {
       type: String,
       default: '',
@@ -33,5 +28,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.textarea {
+  height: 95px;
+  resize: none;
+}
 </style>
