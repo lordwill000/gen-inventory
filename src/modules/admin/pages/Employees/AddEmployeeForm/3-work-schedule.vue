@@ -28,6 +28,7 @@
         label="Employee Status"
         placeholder="Select status"
       />
+      <Schedule />
     </div>
   </div>
 </template>

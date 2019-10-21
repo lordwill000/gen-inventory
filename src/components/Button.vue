@@ -81,6 +81,11 @@ button {
       border-color: $secondary;
       color: $secondary;
     }
+    &--input {
+      background-color: $tertiary;
+      border-color: transparent;
+      color: #898989;
+    }
   }
   img {
     margin-right: 12px;

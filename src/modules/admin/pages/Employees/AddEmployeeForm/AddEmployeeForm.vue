@@ -134,7 +134,7 @@ export default {
   .form-step__control {
     display: flex;
     justify-content: space-between;
-    margin-top: 75px;
+    margin-top: 64px;
   }
 }
 </style>
