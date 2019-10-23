@@ -63,10 +63,16 @@
 </template>
 
 <script>
+import { createNamespacedHelpers } from 'vuex';
+import { types as appTypes } from '@/store/modules/app/actions';
 import ProfileInformation from './1-profile-information.vue';
 import EmergencyContact from './2-emergency-contact.vue';
 import WorkSchedule from './3-work-schedule.vue';
+import Success from './Success.vue';
 import Button from '@/components/Button.vue';
+
+
+const { mapActions: mapAppActions } = createNamespacedHelpers('app');
 
 export default {
   name: 'AddEmployeeForm',
@@ -95,6 +101,9 @@ export default {
     },
   },
   methods: {
+    ...mapAppActions({
+      initAlert: appTypes.INIT_ALERT,
+    }),
     onControlClick(type) {
       switch (type) {
         case 'minus':
@@ -109,8 +118,15 @@ export default {
         case 'close':
           this.$emit('closed');
           break;
+        case 'reset':
+          this.currentStep = 1;
+          break;
         default:
-          console.log('save');
+          this.$emit('closed');
+          this.initAlert({
+            isVisible: true,
+            children: Success,
+          });
       }
     },
   },
@@ -135,6 +151,9 @@ export default {
     display: flex;
     justify-content: space-between;
     margin-top: 64px;
+  }
+  .form-success__control {
+    margin-top: 32px;
   }
 }
 </style>

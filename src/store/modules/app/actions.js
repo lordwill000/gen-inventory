@@ -2,6 +2,7 @@ export const types = {
   SET_ACTIVE_TAB: 'SET_ACTIVE_TAB',
   GET_HEADER_HEIGHT: 'GET_HEADER_HEIGHT',
   INIT_MODAL: 'INIT_MODAL',
+  INIT_ALERT: 'INIT_ALERT',
 };
 
 const actions = {
@@ -13,6 +14,9 @@ const actions = {
   },
   [types.INIT_MODAL]: ({ commit }, payload) => {
     commit(types.INIT_MODAL, payload);
+  },
+  [types.INIT_ALERT]: ({ commit }, payload) => {
+    commit(types.INIT_ALERT, payload);
   },
 };
 

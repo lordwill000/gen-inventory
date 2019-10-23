@@ -22,6 +22,14 @@ const state = {
       width: '615px',
     },
   },
+  alert: {
+    isVisible: false,
+    children: null,
+    dimensions: {
+      maxHeight: '540px',
+      width: '616px',
+    },
+  },
 };
 
 export default {

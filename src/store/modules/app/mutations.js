@@ -10,4 +10,7 @@ export default {
   [types.INIT_MODAL]: ((state, payload) => {
     state.modal = { ...state.modal, ...payload };
   }),
+  [types.INIT_ALERT]: ((state, payload) => {
+    state.alert = { ...state.alert, ...payload };
+  }),
 };

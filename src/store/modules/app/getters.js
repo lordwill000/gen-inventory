@@ -1,5 +1,6 @@
 export default {
   getActiveTab: state => state.activeTab,
   getHeaderHeight: state => state.headerHeight,
-  getModal: state => state.modal,
+  modal: state => state.modal,
+  alert: state => state.alert,
 };

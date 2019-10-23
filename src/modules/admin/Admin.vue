@@ -20,6 +20,18 @@
         })"
       />
     </Modal>
+    <Alert
+      v-if="alert.isVisible"
+      :dimensions="alert.dimensions"
+    >
+      <component
+        :is="alert.children"
+        @closed="initAlert({
+          isVisible: false,
+          children: null
+        })"
+      />
+    </Alert>
   </div>
 </template>
 
@@ -30,6 +42,7 @@ import { types as appTypes } from '@/store/modules/app/actions';
 import Header from '@/components/Header.vue';
 import Sidebar from '@/components/Sidebar.vue';
 import Modal from '@/components/Modal.vue';
+import Alert from '@/components/Alert.vue';
 import adminRoutes from './routes';
 
 const {
@@ -43,6 +56,7 @@ export default {
     Header,
     Sidebar,
     Modal,
+    Alert,
   },
   data() {
     return {
@@ -52,12 +66,14 @@ export default {
   },
   computed: {
     ...mapAppGetters({
-      modal: 'getModal',
+      modal: 'modal',
+      alert: 'alert',
     }),
   },
   methods: {
     ...mapAppActions({
       initModal: appTypes.INIT_MODAL,
+      initAlert: appTypes.INIT_ALERT,
     }),
   },
 };
