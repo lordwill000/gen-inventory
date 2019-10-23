@@ -2,7 +2,7 @@
   <div class="work-schedule">
     <div class="d-flex flex-wrap">
       <Dropdown
-        class="w-100-md"
+        class="w-100-md pr-0-md "
         style="width: 260px; padding-right: 16px;"
         label="Position"
         placeholder="Select position"
@@ -16,7 +16,7 @@
     </div>
     <div class="d-flex flex-wrap">
       <Datepicker
-        class="w-100-md"
+        class="w-100-md pr-0-md"
         style="width: 260px; padding-right: 16px;"
         label="Birthdate"
         placeholder="Select birthdate"
@@ -35,7 +35,7 @@
 
 <script>
 import { Dropdown, Datepicker } from '@/components/form-controls';
-import Schedule from './Schedule';
+import Schedule from './Schedule.vue';
 
 export default {
   name: 'WorkSchedule',

@@ -9,11 +9,13 @@
     </main>
     <Modal
       v-if="modal.isVisible"
+      ref="modal"
       :header="modal.header"
       :dimensions="modal.dimensions"
     >
       <component
         :is="modal.children"
+        @contentChanged="onContentChanged"
         @closed="initModal({
           isVisible: false,
           children: null
@@ -75,6 +77,9 @@ export default {
       initModal: appTypes.INIT_MODAL,
       initAlert: appTypes.INIT_ALERT,
     }),
+    onContentChanged() {
+      this.$refs.modal.$el.children[0].scrollTop = 0;
+    },
   },
 };
 </script>

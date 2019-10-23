@@ -1,5 +1,8 @@
 <template>
-  <div class="form__wrapper">
+  <div
+    ref="formWrapper"
+    class="form__wrapper"
+  >
     <p class="form__subheading">
       Fill-up the form below ({{ currentStep }} of 3)
     </p>
@@ -88,6 +91,7 @@ export default {
   }),
   watch: {
     currentStep(step) {
+      this.$emit('contentChanged');
       switch (step) {
         case 1:
           this.currentFormTitle = 'Profile Information';

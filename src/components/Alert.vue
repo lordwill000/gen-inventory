@@ -1,5 +1,5 @@
 <template>
-  <div class="alert alert__container">
+  <div class="alert__container">
     <div
       v-on-clickaway="onAlertClose"
       class="alert__content"
@@ -64,38 +64,36 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.alert {
-  &__container {
-    align-items: center;
-    background-color: rgba(0,0,0,.4);
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    left: 0;
-    overflow-x: hidden;
-    padding: 0.625em;
-    position: fixed;
-    right: 0;
-    top: 0;
-    z-index: 10;
-    .alert__content {
-      animation: scaleBounce 0.4s ease;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0px 3px 16px rgba(0, 0, 0, 0.12);
-      margin: auto;
-      overflow-y: auto;
-      padding: 40px;
-      position: relative;
-      &--heading {
-        text-align: right;
-        img {
-          cursor: pointer;
-          opacity: .8;
-          transition: opacity 0.2s ease;
-          &:hover {
-            opacity: 1;
-          }
+.alert__container {
+  align-items: center;
+  background-color: rgba(0,0,0,.4);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  overflow-x: hidden;
+  padding: 0.625em;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 10;
+  .alert__content {
+    animation: scaleBounce 0.4s ease;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 3px 16px rgba(0, 0, 0, 0.12);
+    margin: auto;
+    overflow-y: auto;
+    padding: 40px;
+    position: relative;
+    &--heading {
+      text-align: right;
+      img {
+        cursor: pointer;
+        opacity: .8;
+        transition: opacity 0.2s ease;
+        &:hover {
+          opacity: 1;
         }
       }
     }
