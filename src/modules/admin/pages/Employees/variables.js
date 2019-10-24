@@ -35,7 +35,6 @@ export const tableTabs = [
     id: 0,
     label: 'Employee Management',
     val: 'employee_management',
-    suffix: 40,
   },
   {
     id: 1,
@@ -49,7 +48,7 @@ export const employeeMngmntTableHeader = [
     id: 0,
     label: 'ID',
     hide: true,
-    width: '5',
+    width: '10',
   },
   {
     id: 1,
@@ -64,7 +63,7 @@ export const employeeMngmntTableHeader = [
   {
     id: 3,
     label: 'Branch',
-    width: '30',
+    width: '25',
   },
   {
     id: 4,

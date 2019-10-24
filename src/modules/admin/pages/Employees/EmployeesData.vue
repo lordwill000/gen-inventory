@@ -5,7 +5,7 @@
       :key="row.id"
       :class="borderedCell && 'bordered-cell'"
     >
-      <td>&nbsp;</td>
+      <td>{{ row.employeeId }}</td>
       <td class="fw-m">
         {{ row.firstName }} {{ row.lastName }}
       </td>
@@ -25,7 +25,7 @@
 
 <script>
 export default {
-  name: 'TableRow',
+  name: 'EmployeesData',
   props: {
     data: {
       type: Array,
@@ -54,6 +54,9 @@ tbody {
         &:not(:last-of-type) {
           border-right: 1px solid #e8e8e8;
         }
+      }
+      &:first-child {
+        padding-left: 24px;
       }
     }
     &:hover {

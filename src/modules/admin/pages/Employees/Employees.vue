@@ -10,10 +10,19 @@
     <Table
       v-if="activeTab.tab.val === 'employee_management'"
       :headers="employeeMngmntTableHeader"
-      :data="employees"
-      :bordered-cell="false"
       :is-fetching="isFetching"
-    />
+    >
+      <table-row
+        v-if="!isFetching"
+        :data="employees"
+        :bordered-cell="false"
+      />
+      <Spinner
+        v-else
+        center
+        :custom-style="{marginTop: '20px', marginBottom: '20px'}"
+      />
+    </Table>
   </div>
 </template>
 
@@ -23,6 +32,8 @@ import { types as appTypes } from '@/store/modules/app/actions';
 import { types as employeesTypes } from '@/store/modules/employees/actions';
 import TableControls from './TableControls.vue';
 import Table from '@/components/Table/Table.vue';
+import Spinner from '@/components/Spinner.vue';
+import EmployeesData from './EmployeesData.vue';
 import {
   tableTabs, tableControls, employeeMngmntTableHeader,
 } from './variables';
@@ -42,6 +53,8 @@ export default {
   components: {
     TableControls,
     Table,
+    Spinner,
+    'table-row': EmployeesData,
   },
   data: () => ({
     tableTabs,

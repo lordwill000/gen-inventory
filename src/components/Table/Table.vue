@@ -2,48 +2,23 @@
   <div>
     <table>
       <TableHeader :headers="headers" />
-      <TableRow
-        v-if="!isFetching"
-        :data="data"
-        :bordered-cell="borderedCell"
-      />
-      <Spinner
-        v-else
-        center
-        :custom-style="{marginTop: '20px', marginBottom: '20px'}"
-      />
+      <slot />
     </table>
   </div>
 </template>
 
 <script>
 import TableHeader from './TableHeader.vue';
-import TableRow from './TableRow.vue';
-import Spinner from '@/components/Spinner.vue';
 
 export default {
   name: 'Table',
   components: {
     TableHeader,
-    TableRow,
-    Spinner,
   },
   props: {
     headers: {
       type: Array,
       default: () => [],
-    },
-    data: {
-      type: Array,
-      default: () => [],
-    },
-    isFetching: {
-      type: Boolean,
-      default: true,
-    },
-    borderedCell: {
-      type: Boolean,
-      default: false,
     },
   },
 };
