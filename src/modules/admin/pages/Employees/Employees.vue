@@ -4,8 +4,8 @@
       ref="tableHeader"
       :tabs="tableTabs"
       :controls="tableControls"
-      @controlSelected="onControlClicked"
       @onTabChanged="onTabClicked"
+      @onSearchTermInput="handleSearch"
     />
     <Table
       v-if="activeTab.tab.val === 'employee_management'"
@@ -21,12 +21,11 @@
 import { createNamespacedHelpers } from 'vuex';
 import { types as appTypes } from '@/store/modules/app/actions';
 import { types as employeesTypes } from '@/store/modules/employees/actions';
-import TableControls from '@/components/TableControls.vue';
+import TableControls from './TableControls.vue';
 import Table from '@/components/Table/Table.vue';
 import {
   tableTabs, tableControls, employeeMngmntTableHeader,
 } from './variables';
-import AddEmployeeForm from './AddEmployeeForm/AddEmployeeForm.vue';
 
 const {
   mapGetters: mapAppGetters,
@@ -49,11 +48,11 @@ export default {
     tableControls,
     employeeMngmntTableHeader,
     mainOffsetTop: 0,
+    searchTerm: '',
   }),
   computed: {
     ...mapAppGetters({
       activeTab: 'getActiveTab',
-      // headerHeight: 'getHeaderHeight',
     }),
     ...mapEmployeGetters({
       employees: 'data',
@@ -74,25 +73,11 @@ export default {
     ...mapEmployeActions({
       fetchEmployees: employeesTypes.REQUEST,
     }),
-    onControlClicked(control) {
-      switch (control) {
-        case 'add_employee':
-          this.initModal({
-            isVisible: true,
-            header: 'Add Employee',
-            children: AddEmployeeForm,
-          });
-          break;
-        default:
-          console.log(control);
-      }
-    },
     onTabClicked(tab) {
       this.setActiveTab({
         module: this.$route.name,
         tab,
       });
-
       switch (tab.val) {
         case 'employee_management':
           this.fetchEmployees();
@@ -101,10 +86,18 @@ export default {
           console.log('attendance');
       }
     },
+    handleSearch(term) {
+      console.log(term, 'term ');
+    },
   },
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+.controls__wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
 
 </style>

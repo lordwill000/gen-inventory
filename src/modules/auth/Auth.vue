@@ -18,6 +18,8 @@
 
 <script>
 import Form from './elements/Form.vue';
+import mdLogo from '@/assets/images/md-logo.svg';
+import authBg from '@/assets/images/auth-bg.jpg';
 
 export default {
   name: 'Auth',
@@ -25,8 +27,8 @@ export default {
     Form,
   },
   data: () => ({
-    mdLogo: require('@/assets/images/md-logo.svg'),
-    authBg: require('@/assets/images/auth-bg.jpg'),
+    mdLogo,
+    authBg,
     poweredBy: 'Powered by The6thProject',
   }),
   methods: {

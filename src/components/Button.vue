@@ -44,7 +44,7 @@ button {
   @include font-size(12);
   font-family: 'RedHatMed';
   outline-color: $accent;
-  padding: 15px;
+  padding: 12px 16px;
   text-align: center;
   transition: all 0.2s ease;
   width: 100%;

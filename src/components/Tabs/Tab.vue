@@ -63,6 +63,7 @@ export default {
   }
   &.active {
     color: $primary;
+    pointer-events: none;
     .suffix {
       background-color: $accentPale;
       color: $accent;

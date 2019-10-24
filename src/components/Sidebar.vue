@@ -31,6 +31,7 @@
 
 <script>
 import { helpers } from '@/mixins';
+import mdLogo from '@/assets/images/md-logo-light.svg';
 
 export default {
   name: 'Sidebar',
@@ -42,7 +43,7 @@ export default {
     },
   },
   data: () => ({
-    mdLogo: require('@/assets/images/md-logo-light.svg'),
+    mdLogo,
     navItems: [],
   }),
   watch: {
