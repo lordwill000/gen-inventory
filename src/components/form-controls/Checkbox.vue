@@ -1,8 +1,8 @@
 <template>
   <div
     class="checkbox__wrapper"
-    :class="isChecked && 'checked'"
-    @click="isChecked = !isChecked"
+    :class="value && 'checked'"
+    @click="$emit('input', !value)"
   >
     <div class="checkbox">
       <div class="indicator">
@@ -24,10 +24,11 @@ export default {
       type: String,
       default: '',
     },
-  },
-  data: () => ({
-    isChecked: false,
-  }),
+    value: {
+      type: Boolean,
+      default: false
+    }
+  }
 };
 </script>
 

@@ -5,5 +5,8 @@ export default [
     path: '/',
     name: 'auth',
     component: Auth,
+    meta: {
+      unauthorized: true,
+    },
   },
 ];

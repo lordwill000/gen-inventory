@@ -1,4 +1,7 @@
 module.exports = {
+  devServer: {
+    allowedHosts: ['.merchdistrict.localhost'],
+  },
   css: {
     loaderOptions: {
       sass: {

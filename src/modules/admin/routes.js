@@ -7,6 +7,9 @@ export default [
     path: '/admin',
     name: 'admin',
     component: Admin,
+    meta: {
+      isAuthorized: true,
+    },
     redirect: '/admin/overview',
     children: [
       {

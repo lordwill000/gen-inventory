@@ -6,25 +6,36 @@
     <p class="form__subtitle">
       {{ formSubtitle }}
     </p>
-    <form @submit.prevent="$emit('submitted')">
+    <div v-if="errors.length">
+      {{ errors }}
+    </div>
+    <form @submit.prevent="submit ">
       <InputField
-        v-model="formData.username"
+        v-model.trim="$v.formData.username.$model"
         label="Username"
         type="text"
-        placeholder="Type your username"
-      />
+        placeholder="Type your username or email"
+      >
+        <div v-if="$v.formData.username.$error">
+          <div class="form__error" v-if="!$v.formData.username.required">Field is required</div>
+        </div>
+      </InputField>
       <InputField
-        v-model="formData.password"
+        v-model.trim="$v.formData.password.$model"
         label="Password"
         type="password"
         :placeholder="passwordPlaceholder"
-      />
+      >
+        <div v-if="$v.formData.password.$error">
+          <div class="form__error" v-if="!$v.formData.password.required">Field is required</div>
+        </div>
+      </InputField>
       <div
         class="row align-items-center"
         style="margin-bottom: 88px;"
       >
         <div class="col-6">
-          <Checkbox label="Remember Me" />
+          <Checkbox label="Remember Me" v-model="formData.remember"/>
         </div>
         <div class="col-6 text-right">
           <a
@@ -42,6 +53,7 @@
 </template>
 
 <script>
+import { required } from 'vuelidate/lib/validators';
 import { InputField, Checkbox } from '@/components/form-controls';
 import Button from '@/components/Button.vue';
 
@@ -52,6 +64,16 @@ export default {
     InputField,
     Checkbox,
   },
+  validations: {
+    formData: {
+      username: {
+        required,
+      },
+      password: {
+        required,
+      },
+    },
+  },
   data: () => ({
     formTitle: 'Sign in',
     formSubtitle: 'Use your Merch District Account',
@@ -59,8 +81,25 @@ export default {
     formData: {
       username: '',
       password: '',
+      remember: false,
     },
   }),
+  computed: {
+    errors() {
+      return this.$store.state.auth.errors;
+    },
+  },
+  methods: {
+    async submit() {
+      this.$v.$touch()
+      if (!this.$v.$invalid) {
+        await this.$store.dispatch('auth/AUTH_SET', this.formData);
+        if (this.errors.length === 0) {
+          this.$emit('submitted');
+        }
+      }
+    }
+  }
 };
 </script>
 

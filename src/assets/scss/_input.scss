@@ -6,6 +6,10 @@
     color: $secondary;
     display: block;
   }
+  &__error {
+    color: $danger;
+    font-size: 0.8rem;
+  }
   &__group {
     margin-bottom: 24px;
   }
