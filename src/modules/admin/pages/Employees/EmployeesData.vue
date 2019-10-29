@@ -2,17 +2,18 @@
   <tbody>
     <tr
       v-for="row in data"
-      :key="row.id"
+      :key="row._id"
       :class="borderedCell && 'bordered-cell'"
     >
-      <td>{{ row.employeeId }}</td>
+      <!-- <td>{{ row.employeeId }}</td> -->
+      <td>&nbsp;</td>
       <td class="fw-m">
         {{ row.firstName }} {{ row.lastName }}
       </td>
-      <td>{{ row.position.name }}</td>
+      <td>{{ row.role.name }}</td>
       <td>{{ row.branch.name }}</td>
-      <td>{{ row.employedOn }}</td>
-      <td>{{ row.employmentStatus.name }}</td>
+      <td>{{ row.employment.dateStarted ? row.employment.dateStarted : '--' }}</td>
+      <td>{{ row.employment.status }}</td>
       <td>
         <img
           src="@/assets/images/ic_more.svg"

@@ -14,7 +14,7 @@
     >
       <table-row
         v-if="!isFetching"
-        :data="employees"
+        :data="employees.data"
         :bordered-cell="false"
       />
       <Spinner

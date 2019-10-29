@@ -22,12 +22,12 @@
         class="dropdown"
       >
         <li
-          v-for="selection in selections"
-          :key="selection.id"
-          :class="selection.id === '-1' && 'no-event muted'"
-          @click="handleSelectionClick(selection)"
+          v-for="choice in choices"
+          :key="choice.id"
+          :class="choice.id === '-1' && 'no-event muted'"
+          @click="handleSelectionClick(choice)"
         >
-          {{ selection.label }}
+          {{ choice.label }}
         </li>
       </ul>
     </div>
@@ -51,36 +51,14 @@ export default {
     },
     choices: {
       type: Array,
-      default: () => [
-        {
-          id: 0,
-          label: 'Choice 1',
-          val: 'choice_1',
-        },
-        {
-          id: 1,
-          label: 'Choice 2',
-          val: 'choice_2',
-        },
-      ],
+      default: () => [],
     },
   },
   data() {
     return {
-      selections: this.choices,
       selected: null,
       isDropVisible: false,
     };
-  },
-  mounted() {
-    this.selections = [
-      {
-        id: '-1',
-        label: this.placeholder,
-        val: null,
-      },
-      ...this.selections,
-    ];
   },
   methods: {
     handleSelectionClick(selected) {

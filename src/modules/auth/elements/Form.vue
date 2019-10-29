@@ -17,7 +17,12 @@
         placeholder="Type your username or email"
       >
         <div v-if="$v.formData.username.$error">
-          <div class="form__error" v-if="!$v.formData.username.required">Field is required</div>
+          <div
+            v-if="!$v.formData.username.required"
+            class="form__error"
+          >
+            Field is required
+          </div>
         </div>
       </InputField>
       <InputField
@@ -27,7 +32,12 @@
         :placeholder="passwordPlaceholder"
       >
         <div v-if="$v.formData.password.$error">
-          <div class="form__error" v-if="!$v.formData.password.required">Field is required</div>
+          <div
+            v-if="!$v.formData.password.required"
+            class="form__error"
+          >
+            Field is required
+          </div>
         </div>
       </InputField>
       <div
@@ -35,7 +45,10 @@
         style="margin-bottom: 88px;"
       >
         <div class="col-6">
-          <Checkbox label="Remember Me" v-model="formData.remember"/>
+          <Checkbox
+            v-model="formData.remember"
+            label="Remember Me"
+          />
         </div>
         <div class="col-6 text-right">
           <a
@@ -91,15 +104,15 @@ export default {
   },
   methods: {
     async submit() {
-      this.$v.$touch()
+      this.$v.$touch();
       if (!this.$v.$invalid) {
         await this.$store.dispatch('auth/AUTH_SET', this.formData);
         if (this.errors.length === 0) {
           this.$emit('submitted');
         }
       }
-    }
-  }
+    },
+  },
 };
 </script>
 

@@ -16,7 +16,7 @@ const actions = {
   async [types.REQUEST](ctx) {
     try {
       await ctx.commit(types.SET_FETCH_STATUS, true);
-      const data = await api.get('/users?join=role,branch');
+      const data = await api.get('/roles');
       await ctx.dispatch(types.SUCCESS, data);
       return data;
     } catch (error) {
